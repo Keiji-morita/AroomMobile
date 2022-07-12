@@ -1,12 +1,20 @@
-[
+//
+//  data.swift
+//  AroomMobile
+//
+//  Created by Morita Keiji on 2022/07/12.
+//
+
+import Foundation
+
+
+let classesJson = """
+{
+"classes": [
   
-     [
-        "whichday": "monday",
-        
-        {
-      "when": "class1",
-      
-      "rooms" : [
+  "monday": {
+
+      "class1" : [
         "B-102",
         "G-103",
         "G-205",
@@ -29,11 +37,9 @@
         "院1-207",
         "院1-208"
         ]
-      }
       
-      {
-      "when" : "class2"
-      "rooms": [
+      
+      "class2": [
         "H-303",
         "H-305",
         "4別-401",
@@ -44,17 +50,10 @@
         "院1-205",
         "院1-207"
          ]
-      }
       
-      {
-      "when": "class3"
-      "rooms": ["B-102", "4別-402", "院1-102", "院1-207"],
-      }
+      "class3": ["B-102", "4別-402", "院1-102", "院1-207"],
       
-      
-      {
-      "when": "class4"
-      "rooms": [
+      "class4": [
         "G-107",
         "G-203",
         "G-206",
@@ -67,11 +66,8 @@
         "院1-205",
         "院1-207"
        ]
-      }
-
-      {
-      "when": "class5"
-      "room": [
+      
+       "class5": [
         "B-102",
         "B-201",
         "B-303",
@@ -97,8 +93,8 @@
         "院1-207",
         "院1-208"
        ]
-      }
-    ]
+      
+    }
   
   
   "tuesday": {},
@@ -109,3 +105,29 @@
   
   "fryday": {},
 ]
+}
+""".data(using: .utf8)!
+
+
+
+struct classes: Codable {
+    let monday: [Monday]
+    
+    struct Monday: Codable {
+        let class1 : String
+        let class2 : String
+        let class3 : String
+        let class4 : String
+        let class5 : String
+    }
+}
+
+
+let decoder: JSONDecoder = JSONDecoder()
+
+do {
+    let classes: classes = try decoder.decode(classes.self, from: classesJson)
+    print(classes)
+} catch {
+    print("error:", error.localizedDescription)
+}
