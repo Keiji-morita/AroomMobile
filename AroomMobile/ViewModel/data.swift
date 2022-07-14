@@ -110,10 +110,10 @@ let classesJson = """
 
 
 
-struct classes: Codable {
+struct classes: Decodable {
     let monday: [Monday]
     
-    struct Monday: Codable {
+    struct Monday: Decodable {
         let class1 : String
         let class2 : String
         let class3 : String
@@ -123,7 +123,20 @@ struct classes: Codable {
 }
 
 
-let decoder: JSONDecoder = JSONDecoder()
+
+
+
+
+
+struct parseer {
+    let availableRoom = try! JSONDecoder().decode([classes].self, from: classesJson)
+    
+    func parsemethod(){
+    for classes in availableRoom {
+    print(classes)
+     }
+    }
+}
 
 //do {
 //    let classes: classes = try decoder.decode(classes.self, from: classesJson)
