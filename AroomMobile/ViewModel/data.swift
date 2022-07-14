@@ -125,9 +125,9 @@ struct classes: Codable {
 
 let decoder: JSONDecoder = JSONDecoder()
 
-do {
-    let classes: classes = try decoder.decode(classes.self, from: classesJson)
-    print(classes)
-} catch {
-    print("error:", error.localizedDescription)
-}
+//do {
+//    let classes: classes = try decoder.decode(classes.self, from: classesJson)
+//    print(classes)
+//} catch {
+//    print("error:", error.localizedDescription)
+//}
