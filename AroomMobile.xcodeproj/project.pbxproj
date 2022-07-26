@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		172FBFD728800557007C3C9F /* roomList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172FBFD628800557007C3C9F /* roomList.swift */; };
 		17E6105228719F8F00D2E836 /* AroomMobileApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E6105128719F8F00D2E836 /* AroomMobileApp.swift */; };
 		17E6105428719F8F00D2E836 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E6105328719F8F00D2E836 /* ContentView.swift */; };
 		17E6105628719F9200D2E836 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17E6105528719F9200D2E836 /* Assets.xcassets */; };
@@ -14,6 +15,9 @@
 		17E6106328719F9200D2E836 /* AroomMobileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E6106228719F9200D2E836 /* AroomMobileTests.swift */; };
 		17E6106D28719F9200D2E836 /* AroomMobileUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E6106C28719F9200D2E836 /* AroomMobileUITests.swift */; };
 		17E6106F28719F9200D2E836 /* AroomMobileUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E6106E28719F9200D2E836 /* AroomMobileUITestsLaunchTests.swift */; };
+		17E610C0287C8EB100D2E836 /* data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E610BF287C8EB100D2E836 /* data.swift */; };
+		17E610C3287C919400D2E836 /* parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E610C2287C919400D2E836 /* parser.swift */; };
+		17E610C6287C93A900D2E836 /* rooms.json in Resources */ = {isa = PBXBuildFile; fileRef = 17E610C5287C93A900D2E836 /* rooms.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		172FBFD628800557007C3C9F /* roomList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = roomList.swift; sourceTree = "<group>"; };
 		17E6104E28719F8F00D2E836 /* AroomMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AroomMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17E6105128719F8F00D2E836 /* AroomMobileApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AroomMobileApp.swift; sourceTree = "<group>"; };
 		17E6105328719F8F00D2E836 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -44,6 +49,9 @@
 		17E6106828719F9200D2E836 /* AroomMobileUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AroomMobileUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		17E6106C28719F9200D2E836 /* AroomMobileUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AroomMobileUITests.swift; sourceTree = "<group>"; };
 		17E6106E28719F9200D2E836 /* AroomMobileUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AroomMobileUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		17E610BF287C8EB100D2E836 /* data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = data.swift; sourceTree = "<group>"; };
+		17E610C2287C919400D2E836 /* parser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = parser.swift; sourceTree = "<group>"; };
+		17E610C5287C93A900D2E836 /* rooms.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = rooms.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,8 +102,10 @@
 		17E6105028719F8F00D2E836 /* AroomMobile */ = {
 			isa = PBXGroup;
 			children = (
+				17E610C7287D242100D2E836 /* View */,
+				17E610C4287C91AA00D2E836 /* Model */,
+				17E610C1287C916000D2E836 /* ViewModel */,
 				17E6105128719F8F00D2E836 /* AroomMobileApp.swift */,
-				17E6105328719F8F00D2E836 /* ContentView.swift */,
 				17E6105528719F9200D2E836 /* Assets.xcassets */,
 				17E6105728719F9200D2E836 /* Preview Content */,
 			);
@@ -125,6 +135,32 @@
 				17E6106E28719F9200D2E836 /* AroomMobileUITestsLaunchTests.swift */,
 			);
 			path = AroomMobileUITests;
+			sourceTree = "<group>";
+		};
+		17E610C1287C916000D2E836 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				17E610BF287C8EB100D2E836 /* data.swift */,
+				17E610C2287C919400D2E836 /* parser.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		17E610C4287C91AA00D2E836 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				17E610C5287C93A900D2E836 /* rooms.json */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		17E610C7287D242100D2E836 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				17E6105328719F8F00D2E836 /* ContentView.swift */,
+				172FBFD628800557007C3C9F /* roomList.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,6 +267,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17E610C6287C93A900D2E836 /* rooms.json in Resources */,
 				17E6105928719F9200D2E836 /* Preview Assets.xcassets in Resources */,
 				17E6105628719F9200D2E836 /* Assets.xcassets in Resources */,
 			);
@@ -257,7 +294,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				172FBFD728800557007C3C9F /* roomList.swift in Sources */,
+				17E610C3287C919400D2E836 /* parser.swift in Sources */,
 				17E6105428719F8F00D2E836 /* ContentView.swift in Sources */,
+				17E610C0287C8EB100D2E836 /* data.swift in Sources */,
 				17E6105228719F8F00D2E836 /* AroomMobileApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

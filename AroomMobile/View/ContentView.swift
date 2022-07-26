@@ -55,15 +55,12 @@ struct ContentView: View {
             .padding(.all)
                 }
           
-            Button(action: {
-//                print("タップされました")
-            }) {
-                HStack {
-                    Image(systemName: "search")
-                    Text("検索")
-                }
+                
+                    NavigationLink(destination: roomList()) {
+                        Text("検索")
+                    }.onTapGesture(perform: parseer.parsemethod())
+                
 
-            }
             .navigationBarTitle(Text("空き教室検索"))
             }
         }
